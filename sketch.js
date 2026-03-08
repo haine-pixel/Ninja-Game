@@ -237,9 +237,13 @@ function useItem(type) {
 		let targetCanyonX = null;
 		for (let i = 0; i < canyon.x.length; i++) {
 			if (facingRight && canyon.x[i] > characterX) {
-				if (targetCanyonX === null || canyon.x[i] < targetCanyonX) { targetCanyonX = canyon.x[i]; }
+				if (targetCanyonX === null || canyon.x[i] < targetCanyonX) {
+					targetCanyonX = canyon.x[i];
+				}
 			} else if (!facingRight && canyon.x[i] < characterX) {
-				if (targetCanyonX === null || canyon.x[i] > targetCanyonX) { targetCanyonX = canyon.x[i]; }
+				if (targetCanyonX === null || canyon.x[i] > targetCanyonX) {
+					targetCanyonX = canyon.x[i];
+				}
 			}
 		}
 		if (targetCanyonX !== null) {

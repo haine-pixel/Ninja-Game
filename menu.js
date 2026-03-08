@@ -1,4 +1,5 @@
 // --- Button Hit Test ---
+//checks if mouse is inside of button.
 function mouseInButton(button) {
 	return mouseX >= button.x && mouseX <= button.x + button.w &&
 		mouseY >= button.y && mouseY <= button.y + button.h;
