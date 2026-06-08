@@ -34,9 +34,12 @@
     window.addEventListener('resize', resizeGame);
     window.addEventListener('load', function () {
       var interval = setInterval(function () {
-        if (document.querySelector('canvas')) {
+        var canvas = document.querySelector('canvas');
+        if (canvas) {
           resizeGame();
           clearInterval(interval);
+          var observer = new MutationObserver(resizeGame);
+          observer.observe(canvas, { attributes: true, attributeFilter: ['width', 'height'] });
         }
       }, 100);
     });
